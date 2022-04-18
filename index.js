@@ -231,5 +231,5 @@ function addManager() {
         teamQuestions();
     })
 }
-
+module.exports = employeeList;
 addManager();

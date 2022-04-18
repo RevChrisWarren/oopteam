@@ -1,13 +1,26 @@
-
-
-
-const managerList = filter(employeeList => employee, employee === 'Manager');
-const engineerList = filter(employeeList => employee, employee === "Engineer");
-const internList = filter(employeeList => employee, employee === "Intern");
-
+const managerList = employeeList.filter(employee => {
+    if (employee.getRole() === "Manager") {
+        return true;
+    } else {
+        return false;
+    }
+});
+const engineerList = employeeList.filter(employee => {
+    if (employee.getRole() === "Engineer") {
+        return true;
+    } else {
+        return false;
+    }
+});
+const internList = employeeList.filter(employee => {
+    if (employee.getRole() === "Intern") {
+        return true;
+    } else {
+        return false;
+    }
+});
 
 const generateManagerData = managerList => {
-    
     return `
     <section class="col-3" id="employee">
         <div class="flex-row justify-space-between">
