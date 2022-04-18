@@ -3,7 +3,7 @@
 
 const managerList = filter(employeeList => employee, employee === 'Manager');
 const engineerList = filter(employeeList => employee, employee === "Engineer");
-const internList = filter(employeeList, "Intern");
+const internList = filter(employeeList => employee, employee === "Intern");
 
 
 const generateManagerData = managerList => {
