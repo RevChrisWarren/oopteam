@@ -1,18 +1,69 @@
-const generateTeamData = employeeList => {
+
+
+
+const managerList = filterItems(employeeList => , 'Manager');
+const engineerList = filterItems(employeeList, "Engineer");
+const internList = filterItems(employeeList, "Intern");
+
+
+const generateManagerData = managerList => {
+    
     return `
-    <section class="my-3" id="employee">
+    <section class="col-3" id="employee">
         <div class="flex-row justify-space-between">
-        ${employeeList
-            .map(({ name, id, email, officeNumber, github, school }) => {
+        ${managerList
+            .map(({ name, id, email, officeNumber }) => {
                 return `
                 <div class="col-12 mb-2 bg-dark text-light p-3">
-                    <h2 class="role">${this.role}</h2>
+                    <h2 class="role">Manager</h2>
                     <h3 class="employeeName">${name}</h3>
                     <h5 class="employeeid">
                     ID number: ${id}</h5>
                     <p>Email: </p><a href="mailto:${email}">${email}</a>
                     <p>${officeNumber}</p>
+                    </div>
+                `;
+            })
+            .join('')}
+            </div>
+        </section>
+            `;
+}
+const generateEngineerData = engineerList => {
+    return `
+    <section class="col-3" id="employee">
+        <div class="flex-row justify-space-between">
+        ${engineerList
+            .map(({ name, id, email, github }) => {
+                return `
+                <div class="col-12 mb-2 bg-dark text-light p-3">
+                    <h2 class="role">Engineer</h2>
+                    <h3 class="employeeName">${name}</h3>
+                    <h5 class="employeeid">
+                    ID number: ${id}</h5>
+                    <p>Email: </p><a href="mailto:${email}">${email}</a>
                     <a href="${github}">${github}</a>
+                    </div>
+                `;
+            })
+            .join('')}
+            </div>
+        </section>
+            `;
+}
+const generateInternData = internList => {
+    return `
+    <section class="col-3" id="employee">
+        <div class="flex-row justify-space-between">
+        ${internList
+            .map(({ name, id, email, school }) => {
+                return `
+                <div class="col-12 mb-2 bg-dark text-light p-3">
+                    <h2 class="role">Intern</h2>
+                    <h3 class="employeeName">${name}</h3>
+                    <h5 class="employeeid">
+                    ID number: ${id}</h5>
+                    <p>Email: </p><a href="mailto:${email}">${email}</a>
                     <p>${school}</p>
                     </div>
                 `;
@@ -22,7 +73,7 @@ const generateTeamData = employeeList => {
         </section>
             `;
 }
-        const generateTeam = employeeList => {
+        const generateTeam = (managerList, engineerList, internList) => {
             
             
                 return `
@@ -35,7 +86,7 @@ const generateTeamData = employeeList => {
                     <meta http-equiv="X-UA-Compatible" content="ie=edge">
                     <title>Work Team Info</title>
                     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-                    <link rel="stylesheet" href="style.css">
+                    <link rel="stylesheet" href="./style.css">
                 </head>
             
                 <body>
@@ -46,7 +97,9 @@ const generateTeamData = employeeList => {
                         </div>
                     </header>
                     <main class="container col-4">
-                        ${generateTeamData(employeeList)}
+                        ${generateManagerData(managerList)}
+                        ${generateEngineerData(engineerList)}
+                        ${generateInternData(internList)}
                     </main>
                     
                 </body>
