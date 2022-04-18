@@ -83,7 +83,7 @@ const teamQuestions = () => {
         } else if (response.role === "Intern") {
                 addIntern(response);
         } else {
-            generateTeam();
+            writeToFile("./dist/index.html", generateTeam(employeeList));
     }
 
     })

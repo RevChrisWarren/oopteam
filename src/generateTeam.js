@@ -1,4 +1,4 @@
-const generateTeam = employeeList => {
+const generateTeamData = employeeList => {
     return `
     <section class="my-3" id="employee">
         <div class="flex-row justify-space-between">
@@ -6,14 +6,14 @@ const generateTeam = employeeList => {
             .map(({ name, id, email, officeNumber, github, school }) => {
                 return `
                 <div class="col-12 mb-2 bg-dark text-light p-3">
-                    <h2 class="role">${getRole()}</h2>
+                    <h2 class="role">${this.role}</h2>
                     <h3 class="employeeName">${name}</h3>
                     <h5 class="employeeid">
                     ID number: ${id}</h5>
                     <p>Email: </p><a href="mailto:${email}">${email}</a>
                     <p>${officeNumber}</p>
-                    <a href="${github}"</a>
-                    <p>${school}
+                    <a href="${github}">${github}</a>
+                    <p>${school}</p>
                     </div>
                 `;
             })
@@ -21,8 +21,8 @@ const generateTeam = employeeList => {
             </div>
         </section>
             `;
-        }
-        module.exports = employeeList => {
+}
+        const generateTeam = employeeList => {
             
             
                 return `
@@ -46,10 +46,12 @@ const generateTeam = employeeList => {
                         </div>
                     </header>
                     <main class="container col-4">
-                        ${generateTeam(employeeList)}
+                        ${generateTeamData(employeeList)}
                     </main>
                     
                 </body>
                 </html>
                 `;
             };
+        
+          module.exports = generateTeam;
