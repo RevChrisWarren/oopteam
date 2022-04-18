@@ -1,9 +1,9 @@
 
 
 
-const managerList = filterItems(employeeList => , 'Manager');
-const engineerList = filterItems(employeeList, "Engineer");
-const internList = filterItems(employeeList, "Intern");
+const managerList = filter(employeeList => employee, employee === 'Manager');
+const engineerList = filter(employeeList => employee, employee === "Engineer");
+const internList = filter(employeeList, "Intern");
 
 
 const generateManagerData = managerList => {
