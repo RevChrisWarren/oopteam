@@ -3,11 +3,12 @@
     margin: auto;
     background-color: blue;
     color: aliceblue;
+    text-align: center;
 }
 
 #employee {
-    width: 20%;
-    display: flex;
+    width: 175px;
+    display: inline-flex;
     flex-wrap: wrap;
     background-color: cornflowerblue;
     color: aliceblue;

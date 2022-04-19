@@ -1,24 +1,3 @@
-const managerList = employeeList.filter(employee => {
-    if (employee.getRole() === "Manager") {
-        return true;
-    } else {
-        return false;
-    }
-});
-const engineerList = employeeList.filter(employee => {
-    if (employee.getRole() === "Engineer") {
-        return true;
-    } else {
-        return false;
-    }
-});
-const internList = employeeList.filter(employee => {
-    if (employee.getRole() === "Intern") {
-        return true;
-    } else {
-        return false;
-    }
-});
 
 const generateManagerData = managerList => {
     return `
@@ -55,11 +34,13 @@ const generateEngineerData = engineerList => {
                     <h5 class="employeeid">
                     ID number: ${id}</h5>
                     <p>Email: </p><a href="mailto:${email}">${email}</a>
-                    <a href="${github}">${github}</a>
+                    <p>Github: </p><a href="${github}">${github}</a>
                     </div>
+                    <br>
                 `;
             })
-            .join('')}
+            .join('')
+        }
             </div>
         </section>
             `;
@@ -113,6 +94,7 @@ const generateInternData = internList => {
                         ${generateManagerData(managerList)}
                         ${generateEngineerData(engineerList)}
                         ${generateInternData(internList)}
+                      
                     </main>
                     
                 </body>

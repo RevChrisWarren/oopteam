@@ -5,7 +5,9 @@ const path = require('path');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const Manager = require('./lib/Manager');
-let employeeList = [];
+let managerList = [];
+let engineerList = [];
+let internList = [];
 
 // Manager Questions prompted
 //User enters manager details
@@ -83,7 +85,7 @@ const teamQuestions = () => {
         } else if (response.role === "Intern") {
                 addIntern(response);
         } else {
-            writeToFile("./dist/index.html", generateTeam(employeeList));
+            writeToFile("./dist/index.html", generateTeam(managerList, engineerList, internList));
             copyFile();
         }
 
@@ -140,8 +142,8 @@ function addIntern() {
     ]).then(inquirerResponses => {
         console.log('inquirerResponses: ', inquirerResponses);
         const newintern = new Intern(inquirerResponses.fullname, inquirerResponses.id, inquirerResponses.email, inquirerResponses.school);
-        employeeList.push(newintern);
-        console.log('employeeList: ', employeeList);
+        internList.push(newintern);
+        console.log('internList: ', internList);
         teamQuestions();
     })
 }
@@ -196,8 +198,8 @@ function addEngineer() {
     ]).then(inquirerResponses => {
         console.log('inquirerResponses: ', inquirerResponses);
         const newengineer = new Engineer(inquirerResponses.fullname, inquirerResponses.id, inquirerResponses.email, inquirerResponses.github);
-        employeeList.push(newengineer);
-        console.log('employeeList: ', employeeList);
+        engineerList.push(newengineer);
+        console.log('engineerList: ', engineerList);
         teamQuestions();
     });
 }
@@ -226,10 +228,9 @@ function addManager() {
     managerQuestions().then(inquirerResponses => {
         console.log('inquirerResponses: ', inquirerResponses);
         const newmanager = new Manager(inquirerResponses.fullname, inquirerResponses.id, inquirerResponses.email, inquirerResponses.officeNumber)
-        employeeList.push(newmanager);
-        console.log('employeeList: ', employeeList);
+        managerList.push(newmanager);
+        console.log('managerList: ', managerList);
         teamQuestions();
     })
 }
-module.exports = employeeList;
 addManager();
