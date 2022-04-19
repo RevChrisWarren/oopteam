@@ -1,4 +1,4 @@
-
+//create HTML section from input in managerList
 const generateManagerData = managerList => {
     return `
     <section class="col-3" id="employee">
@@ -22,6 +22,7 @@ const generateManagerData = managerList => {
             </div>
             `;
 }
+//create div that displays engineer input data, and maps for each engineer created in inquirer prompt
 const generateEngineerData = engineerList => {
     return `
         ${engineerList
@@ -43,6 +44,7 @@ const generateEngineerData = engineerList => {
         }
             `;
 }
+//create div that displays intern input data, and maps for each intern created in inquirer prompt
 const generateInternData = internList => {
     return `
         ${internList
@@ -67,7 +69,7 @@ const generateInternData = internList => {
 }
 const generateTeam = (managerList, engineerList, internList) => {
 
-
+//here the HTML for the page is set up
     return `
                 <!DOCTYPE html>
                 <html lang="en">

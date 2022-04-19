@@ -1,6 +1,6 @@
 const Employee = require('../lib/Employee');
 const Intern = require('../lib/Intern')
-
+//Test to confirm object was instantiated properly
 test('creates a new employee object', () => {
     const intern = new Intern('John', 3, 'email', 'school');
 

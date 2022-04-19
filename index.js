@@ -70,6 +70,7 @@ const managerQuestions = () => {
             }
         }])
 }
+// If another team member is to be added, the user selects the role. If not, they select no more members and the app creates the HTML
 const teamQuestions = () => {
     return inquirer.prompt([
         {
@@ -78,7 +79,7 @@ const teamQuestions = () => {
             message: 'Please choose a new team member to add',
             choices: ['Engineer', 'Intern', 'I do not need to add any more members']
         },
-
+// when the user selects no more team members to add, the HTML is written to an index file in the dist folder
     ]).then(response => {
         if (response.role === "Engineer") {
                 addEngineer(response);
@@ -91,7 +92,7 @@ const teamQuestions = () => {
 
     })
 };
-
+//These questions are for adding interns, and responses are saved in an array of Intern objects called internList
 function addIntern() {
     inquirer.prompt([
         {
@@ -138,7 +139,7 @@ function addIntern() {
                 name: 'school',
                 message: 'Please give the school where the new intern is enrolled.',
             }
-
+//When finished, push intern objects to internList, then loop back to teamQuestions to see if any other team member should be added
     ]).then(inquirerResponses => {
         console.log('inquirerResponses: ', inquirerResponses);
         const newintern = new Intern(inquirerResponses.fullname, inquirerResponses.id, inquirerResponses.email, inquirerResponses.school);
@@ -147,7 +148,7 @@ function addIntern() {
         teamQuestions();
     })
 }
-
+//These questions get information about engineers added to the team and push that information to engineerList
 function addEngineer() {
     inquirer.prompt([
         {
@@ -194,7 +195,7 @@ function addEngineer() {
                 name: 'github',
                 message: "Please give the new engineer's github username.",
             }
-
+//Push info to engineerList and then loop back to teamQuestions to see if there are other team members to add.
     ]).then(inquirerResponses => {
         console.log('inquirerResponses: ', inquirerResponses);
         const newengineer = new Engineer(inquirerResponses.fullname, inquirerResponses.id, inquirerResponses.email, inquirerResponses.github);
@@ -209,6 +210,7 @@ function writeToFile(fileName, data) {
         if (err) throw err;
     });
 }
+//when information has been collected, copy the css stylesheet from the src folder to the dist folder
 const copyFile = () => {
     return new Promise((resolve, reject) => {
         fs.copyFile('./src/style.css', './dist/style.css', (err) => {
