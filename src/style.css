@@ -1,17 +1,27 @@
 .banner {
-    width: 60%;
+    width: 500px;
+    height: 120px;
     margin: auto;
     background-color: blue;
     color: aliceblue;
     text-align: center;
 }
-
 #employee {
-    width: 175px;
-    display: inline-flex;
+    display:flex;
     flex-wrap: wrap;
+}
+.boxes {
+    padding: 20px;
+    margin: 20px;
+    width: min-content;
+    height: min-content;
     background-color: cornflowerblue;
     color: aliceblue;
-    padding: 15px;
-    margin: 10px;
+
+}
+.boxes h2{
+    font-size: 30px;
+}
+.boxes h3, p, a{
+    font-size: 25px
 }

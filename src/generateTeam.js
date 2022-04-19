@@ -6,11 +6,11 @@ const generateManagerData = managerList => {
         ${managerList
             .map(({ name, id, email, officeNumber }) => {
                 return `
-                <div class="col-12 mb-2 bg-dark text-light p-3">
+                <div class="boxes">
                     <h2 class="role">Manager</h2>
                     <h3 class="employeeName">${name}</h3>
-                    <h5 class="employeeid">
-                    ID number: ${id}</h5>
+                    <h3 class="employeeid">
+                    ID number: ${id}</h3>
                     <p>Email: </p><a href="mailto:${email}">${email}</a>
                     <p>${officeNumber}</p>
                     </div>
@@ -18,44 +18,37 @@ const generateManagerData = managerList => {
             })
             .join('')}
             </div>
-        </section>
             `;
 }
 const generateEngineerData = engineerList => {
     return `
-    <section class="col-3" id="employee">
-        <div class="flex-row justify-space-between">
         ${engineerList
             .map(({ name, id, email, github }) => {
                 return `
-                <div class="col-12 mb-2 bg-dark text-light p-3">
+                <div class="boxes">
                     <h2 class="role">Engineer</h2>
                     <h3 class="employeeName">${name}</h3>
-                    <h5 class="employeeid">
-                    ID number: ${id}</h5>
+                    <h3 class="employeeid">
+                    ID number: ${id}</h3>
                     <p>Email: </p><a href="mailto:${email}">${email}</a>
-                    <p>Github: </p><a href="${github}">${github}</a>
+                    <p>Github: </p><a href="github.com/${github}">${github}</a>
                     </div>
                 `;
             })
             .join('')
         }
-            </div>
-        </section>
             `;
 }
 const generateInternData = internList => {
     return `
-    <section class="col-3" id="employee">
-        <div class="flex-row justify-space-between">
         ${internList
             .map(({ name, id, email, school }) => {
                 return `
-                <div class="col-12 mb-2 bg-dark text-light p-3">
+                <div class="boxes">
                     <h2 class="role">Intern</h2>
                     <h3 class="employeeName">${name}</h3>
-                    <h5 class="employeeid">
-                    ID number: ${id}</h5>
+                    <h3 class="employeeid">
+                    ID number: ${id}</h3>
                     <p>Email: </p><a href="mailto:${email}">${email}</a>
                     <p>${school}</p>
                     </div>
@@ -89,7 +82,7 @@ const generateInternData = internList => {
                           
                         </div>
                     </header>
-                    <main class="container col-4">
+                    <main class="container">
                         ${generateManagerData(managerList)}
                         ${generateEngineerData(engineerList)}
                         ${generateInternData(internList)}
