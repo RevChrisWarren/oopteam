@@ -1,6 +1,7 @@
 .banner {
     width: 500px;
-    height: 120px;
+    height: 60px;
+    padding: 40px;
     margin: auto;
     background-color: blue;
     color: aliceblue;
@@ -9,19 +10,37 @@
 #employee {
     display:flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 .boxes {
     padding: 20px;
     margin: 20px;
-    width: min-content;
-    height: min-content;
+    width: 300px;
+    height: 500px;
     background-color: cornflowerblue;
     color: aliceblue;
+    box-shadow: 10px 10px 5px lightgrey;
 
 }
 .boxes h2{
     font-size: 30px;
+    text-align: center;
 }
-.boxes h3, p, a{
-    font-size: 25px
+.engineer {
+    background-color: darkcyan;
+}
+.intern {
+    background-color: dimgray;
+}
+.boxes h4, p, a{
+    font-size: 25px;
+}
+.boxes h3 {
+    font-size: 35px;
+}
+.info {
+    color:dimgrey;
+    background-color: beige;
+    height: 300px;
+    padding: 20px;
 }
