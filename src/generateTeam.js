@@ -36,7 +36,6 @@ const generateEngineerData = engineerList => {
                     <p>Email: </p><a href="mailto:${email}">${email}</a>
                     <p>Github: </p><a href="${github}">${github}</a>
                     </div>
-                    <br>
                 `;
             })
             .join('')
