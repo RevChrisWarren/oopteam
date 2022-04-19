@@ -1,4 +1,5 @@
 # Object Oriented Programming Challenge
+![Screenshot of application](/OOPpage.png)
 
 ## This app takes data entered into node inquirer and creates cards for team members in a work team environment.
 * The project creates an employee object 
